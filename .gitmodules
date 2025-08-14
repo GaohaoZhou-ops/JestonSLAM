@@ -10,3 +10,18 @@
 [submodule "fast_lio_project/src/livox_ros_driver"]
 	path = fast_lio_project/src/livox_ros_driver
 	url = https://github.com/Livox-SDK/livox_ros_driver.git
+[submodule "third_party/Sophus"]
+	path = third_party/Sophus
+	url = https://github.com/strasdat/Sophus.git
+[submodule "fast_livo2_project/src/FAST-LIVO2"]
+	path = fast_livo2_project/src/FAST-LIVO2
+	url = https://github.com/hku-mars/FAST-LIVO2.git
+[submodule "fast_livo2_project/src/rpg_vikit"]
+	path = fast_livo2_project/src/rpg_vikit
+	url = https://github.com/xuankuzcr/rpg_vikit.git
+[submodule "third_party/opencv-4.2.0"]
+	path = third_party/opencv-4.2.0
+	url = https://github.com/opencv/opencv.git
+[submodule "third_party/opencv_contrib-4.2.0"]
+	path = third_party/opencv_contrib-4.2.0
+	url = https://github.com/opencv/opencv_contrib.git
