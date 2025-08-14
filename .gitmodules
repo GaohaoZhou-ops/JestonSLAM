@@ -25,3 +25,9 @@
 [submodule "third_party/opencv_contrib-4.2.0"]
 	path = third_party/opencv_contrib-4.2.0
 	url = https://github.com/opencv/opencv_contrib.git
+[submodule "point_lio_project/src/Point-LIO"]
+	path = point_lio_project/src/Point-LIO
+	url = https://github.com/hku-mars/Point-LIO.git
+[submodule "point_lio_project/src/livox_ros_driver"]
+	path = point_lio_project/src/livox_ros_driver
+	url = https://github.com/Livox-SDK/livox_ros_driver.git

@@ -9,6 +9,16 @@ This project implements some popular SLAM projects on the Nvidia Jetson device, 
 |Nvidia Jetson Orin DK 64GB|5.1.5|Ubuntu 20.04|Noetic|
 
 
+----
+# News
+
+* 2025-08-14: Add Point-LIO project；
+* 2025-08-14: Add Fast-LIVO2 project；
+* 2025-08-14: Add Fast-LIO project；
+
+---
+# Note
+
 Here are a few things you need to know before you start your project:
 
 1. Since our main device is `Jetson Orin DK`, if you are also using this device and it is a brand new host, we recommend that you refer to [this blog](https://blog.csdn.net/nenchoumi3119/article/details/149779298?spm=1001.2014.3001.5502) post for flashing;
