@@ -234,6 +234,18 @@ $ catkin_make
 
 # Step6. 运行示例
 
+修改配置文件 `fast_livo2_project/src/FAST-LIVO2/config/avia.yaml` 用以保存地图，否则将无法保存地图：
+
+```yaml
+pcd_save:
+  pcd_save_en: true  # false
+  colmap_output_en: true # false
+  filter_size_pcd: 0.15
+  interval: -1
+```
+
+运行建图节点：
+
 ```bash
 $ cd JetsonSLAM
 $ cd fast_livo2_project
@@ -241,9 +253,7 @@ $ source devel/setup.bash
 $ roslaunch fast_livo mapping_avia.launch
 ```
 
-你可以在 Fast-Livo2 官方仓库中提供的数据集样本中下载一个示例，或者在我的网盘中拉取 `CBD_Building_01.bag` 数据包：
-
-* [FAST-LIVO2-Dataset](https://connecthkuhk-my.sharepoint.com/personal/zhengcr_connect_hku_hk/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fzhengcr%5Fconnect%5Fhku%5Fhk%2FDocuments%2Ffast%2Dlivo2%2Ddataset&ga=1)
+你可以在 Fast-Livo2 官方仓库中提供的 [数据集](https://connecthkuhk-my.sharepoint.com/personal/zhengcr_connect_hku_hk/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fzhengcr%5Fconnect%5Fhku%5Fhk%2FDocuments%2Ffast%2Dlivo2%2Ddataset&ga=1) 样本中下载一个示例，或者在我的网盘中拉取 `CBD_Building_01.bag` 数据包：
 
 ```bash
 https://pan.baidu.com/s/1nIBZoz2aIX9HakQI_pjKFA?pwd=5fp3
@@ -256,3 +266,17 @@ $ rosbag play CBD_Building_01.bag
 ```
 
 ![mapping](mapping.png)
+
+当建图完成并关闭建图终端后，你会在 `fast_livo2_project/src/FAST-LIVO2/Log/PCD` 路径下得到一个名为 `all_downsampled_points.pcd` 点云地图：
+
+```bash
+$ cd JetsonSLAM
+$ ll fast_livo2_project/src/FAST-LIVO2/Log/PCD
+
+total 258M
+drwxrwxr-x 2 orin orin 4.0K Aug 14 18:05 ./
+drwxrwxr-x 5 orin orin 4.0K Aug 14 17:49 ../
+-rw-r--r-- 1 orin orin 1.9M Aug 14 18:05 all_downsampled_points.pcd
+-rw-r--r-- 1 orin orin 256M Aug 14 18:05 all_raw_points.pcd
+-rw-rw-r-- 1 orin orin    0 Aug 14 16:32 .gitkeep
+```

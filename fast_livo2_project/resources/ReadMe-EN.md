@@ -231,6 +231,18 @@ $ catkin_make
 
 # Step 6. Run the example
 
+Modify the configuration file `fast_livo2_project/src/FAST-LIVO2/config/avia.yaml` to save the map, otherwise the map will not be saved:
+
+```yaml
+pcd_save:
+  pcd_save_en: true  # false
+  colmap_output_en: true # false
+  filter_size_pcd: 0.15
+  interval: -1
+```
+
+Run mapping node:
+
 ```bash
 $ cd JetsonSLAM
 $ cd fast_livo2_project
@@ -238,9 +250,7 @@ $ source devel/setup.bash
 $ roslaunch fast_livo mapping_avia.launch
 ```
 
-You can download an example from the dataset samples provided in the Fast-Livo2 official repository, or pull the `CBD_Building_01.bag` data package from my network drive:
-
-* [FAST-LIVO2-Dataset](https://connecthkuhk-my.sharepoint.com/personal/zhengcr_connect_hku_hk/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fzhengcr%5Fconnect%5Fhku%5Fhk%2FDocuments%2Ffast%2Dlivo2%2Ddataset&ga=1)
+You can download an example from the dataset samples provided in the Fast-Livo2 official [cloud storage](https://connecthkuhk-my.sharepoint.com/personal/zhengcr_connect_hku_hk/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fzhengcr%5Fconnect%5Fhku%5Fhk%2FDocuments%2Ffast%2Dlivo2%2Ddataset&ga=1), or pull the `CBD_Building_01.bag` data package from my network drive:
 
 ```bash
 https://pan.baidu.com/s/1nIBZoz2aIX9HakQI_pjKFA?pwd=5fp3
@@ -253,3 +263,17 @@ $ rosbag play CBD_Building_01.bag
 ```
 
 ![mapping](mapping.png)
+
+When the mapping is completed and the mapping terminal is closed, you will get a point cloud map named `all_downsampled_points.pcd` in the `fast_livo2_project/src/FAST-LIVO2/Log/PCD` path:
+
+```bash
+$ cd JetsonSLAM
+$ ll fast_livo2_project/src/FAST-LIVO2/Log/PCD
+
+total 258M
+drwxrwxr-x 2 orin orin 4.0K Aug 14 18:05 ./
+drwxrwxr-x 5 orin orin 4.0K Aug 14 17:49 ../
+-rw-r--r-- 1 orin orin 1.9M Aug 14 18:05 all_downsampled_points.pcd
+-rw-r--r-- 1 orin orin 256M Aug 14 18:05 all_raw_points.pcd
+-rw-rw-r-- 1 orin orin    0 Aug 14 16:32 .gitkeep
+```
