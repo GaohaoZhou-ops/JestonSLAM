@@ -29,6 +29,15 @@ $ sudo make install
 
 # Step3. 编译 FAST_LIO 工程
 
+如果你的终端默认启动了 conda 的 base 环境，需要在编译之前先退出环境：
+
+```bash
+$ conda deactivate 
+```
+
+执行编译命令：
+
+
 ```bash
 $ cd JestonSLAM
 $ cd fast_lio_project/src/FAST_LIO
@@ -43,5 +52,6 @@ $ catkin_make
 $ cd JestonSLAM
 $ cd fast_lio_project/
 $ source devel/setup.bash
-$ roslaunch FAST_LIO 
+$ roslaunch fast_lio mapping_mid360.launch 
 ```
+
