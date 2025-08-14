@@ -4,3 +4,6 @@
 [submodule "third_party/Livox-SDK"]
 	path = third_party/Livox-SDK
 	url = https://github.com/Livox-SDK/Livox-SDK.git
+[submodule "fast_lio_project/src/FAST_LIO"]
+	path = fast_lio_project/src/FAST_LIO
+	url = https://github.com/hku-mars/FAST_LIO.git
