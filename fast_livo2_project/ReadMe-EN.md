@@ -9,7 +9,7 @@ This repository replicates the Fast-Livo2 project, including the following sourc
 # Step 1. Initialize the submodule
 
 ```bash
-$ cd JestonSLAM
+$ cd JetsonSLAM
 $ git submodule update --init third_party/Sophus
 $ git submodule update --init fast_livo2_project/src/FAST-LIVO2
 $ git submodule update --init fast_livo2_project/src/rpg_vikit
@@ -18,7 +18,7 @@ $ git submodule update --init fast_livo2_project/src/rpg_vikit
 # Step 2. Install Sophus
 
 ```bash
-$ cd JestonSLAM
+$ cd JetsonSLAM
 $ cd third_party/Sophus
 $ git checkout a621ff
 $ mkdir build && cd build && cmake ..
@@ -29,14 +29,14 @@ $ sudo make install
 If you encounter the following error during compilation:
 
 ```bash
-/home/orin/Documents/JestonSLAM/third_party/Sophus/sophus/so2.cpp:32:26: error: lvalue required as left operand of assignment
+/home/orin/Documents/JetsonSLAM/third_party/Sophus/sophus/so2.cpp:32:26: error: lvalue required as left operand of assignment
 32 | unit_complex_.real() = 1.;
 | ^~
-/home/orin/Documents/JestonSLAM/third_party/Sophus/sophus/so2.cpp:33:26: error: lvalue required as left operand of assignment
+/home/orin/Documents/JetsonSLAM/third_party/Sophus/sophus/so2.cpp:33:26: error: lvalue required as left operand of assignment
 33 | unit_complex_.imag() = 0.;
 ```
 
-Modify the `JestonSLAM/Sophus/sophus/so2.cpp` file to the following:
+Modify the `JetsonSLAM/Sophus/sophus/so2.cpp` file to the following:
 
 ```cpp
 SO2::SO2()
@@ -103,11 +103,11 @@ You can download the compiled files directly from the following network drive:
 https://pan.baidu.com/s/1nIBZoz2aIX9HakQI_pjKFA?pwd=5fp3
 ```
 
-Download the downloaded Move the `opencv-4.2.0.zip` file to the `JestonSLAM/third_party` directory and unzip it:
+Download the downloaded Move the `opencv-4.2.0.zip` file to the `JetsonSLAM/third_party` directory and unzip it:
 
 ```bash
-$ mv opencv-4.2.0.zip JestonSLAM/third_party
-$ cd JestonSLAM/thrid_party
+$ mv opencv-4.2.0.zip JetsonSLAM/third_party
+$ cd JetsonSLAM/thrid_party
 $ unzip opencv-4.2.0.zip
 ```
 
@@ -125,7 +125,7 @@ $ sudo apt-get install libleptonica-dev
 * Initialize the submodule:
 
 ```bash
-$ cd JestonSLAM
+$ cd JetsonSLAM
 $ git submodule update --init third_party/opencv-4.2.0/
 $ git submodule update --init third_party/opencv_contrib-4.2.0/
 ```
@@ -133,7 +133,7 @@ $ git submodule update --init third_party/opencv_contrib-4.2.0/
 * Switch branches:
 
 ```bash
-$ cd JestonSLAM
+$ cd JetsonSLAM
 $ cd third_party/opencv-4.2.0/
 $ git checkout 4.2.0
 
@@ -147,7 +147,7 @@ To fully utilize CUDA-accelerated OpenCV, compile the source code using the foll
 [Note]: To avoid interfering with the default OpenCV library in your system, do not execute `sudo make install` after compiling.
 
 ```bash
-$ cd JestonSLAM
+$ cd JetsonSLAM
 $ cd third_party/opencv-4.2.0/
 $ mkdir build && cd build
 $cmake\
@@ -180,7 +180,7 @@ There are three files you need to modify. Find the corresponding files and modif
 
 ```cmake
 # add: Manually configure the OpenCV library path
-SET(OpenCV_DIR "/home/orin/JestonSLAM/third_party/opencv-4.2.0/build")
+SET(OpenCV_DIR "/home/orin/JetsonSLAM/third_party/opencv-4.2.0/build")
 message(STATUS "Found OpenCV version: ${OpenCV_VERSION}")
 
 # Add plain CMake packages
@@ -193,7 +193,7 @@ FIND_PACKAGE(Sophus REQUIRED)
 
 ```cmake
 # add: Manually configure OpenCV Library Path
-SET(OpenCV_DIR "/home/orin/JestonSLAM/third_party/opencv-4.2.0/build")
+SET(OpenCV_DIR "/home/orin/JetsonSLAM/third_party/opencv-4.2.0/build")
 message(STATUS "Found OpenCV version: ${OpenCV_VERSION}")
 
 # Add plain CMake packages
@@ -209,7 +209,7 @@ cmake_minimum_required(VERSION 2.8.3)
 project(fast_livo)
 
 # Add: Manually configure the OpenCV library path
-SET(OpenCV_DIR "/home/orin/JestonSLAM/third_party/opencv-4.2.0/build")
+SET(OpenCV_DIR "/home/orin/JetsonSLAM/third_party/opencv-4.2.0/build")
 message(STATUS "Found OpenCV version: ${OpenCV_VERSION}")
 ```
 
@@ -224,7 +224,7 @@ $ conda deactivate
 Compile:
 
 ```bash
-$ cd JestonSLAM
+$ cd JetsonSLAM
 $ cd fast_livo2_project
 $ catkin_make
 ```
@@ -232,7 +232,7 @@ $ catkin_make
 # Step 6. Run the example
 
 ```bash
-$ cd JestonSLAM
+$ cd JetsonSLAM
 $ cd fast_livo2_project
 $ source devel/setup.bash
 $ roslaunch fast_livo mapping_avia.launch

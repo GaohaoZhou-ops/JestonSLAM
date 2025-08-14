@@ -10,7 +10,7 @@
 # Step1. 初始化子模块
 
 ```bash
-$ cd JestonSLAM
+$ cd JetsonSLAM
 $ git submodule update --init third_party/Sophus
 $ git submodule update --init fast_livo2_project/src/FAST-LIVO2
 $ git submodule update --init fast_livo2_project/src/rpg_vikit
@@ -19,7 +19,7 @@ $ git submodule update --init fast_livo2_project/src/rpg_vikit
 # Step2. 安装 Sophus 
 
 ```bash
-$ cd JestonSLAM
+$ cd JetsonSLAM
 $ cd third_party/Sophus
 $ git checkout a621ff
 $ mkdir build && cd build && cmake ..
@@ -30,14 +30,14 @@ $ sudo make install
 如果你在编译过程中遇到了如下报错：
 
 ```bash
-/home/orin/Documents/JestonSLAM/third_party/Sophus/sophus/so2.cpp:32:26: error: lvalue required as left operand of assignment
+/home/orin/Documents/JetsonSLAM/third_party/Sophus/sophus/so2.cpp:32:26: error: lvalue required as left operand of assignment
    32 |   unit_complex_.real() = 1.;
       |                          ^~
-/home/orin/Documents/JestonSLAM/third_party/Sophus/sophus/so2.cpp:33:26: error: lvalue required as left operand of assignment
+/home/orin/Documents/JetsonSLAM/third_party/Sophus/sophus/so2.cpp:33:26: error: lvalue required as left operand of assignment
    33 |   unit_complex_.imag() = 0.;
 ```
 
-修改文件 `JestonSLAM/Sophus/sophus/so2.cpp` 内容如下：
+修改文件 `JetsonSLAM/Sophus/sophus/so2.cpp` 内容如下：
 
 ```cpp
 SO2::SO2()
@@ -104,11 +104,11 @@ Libraries:
 https://pan.baidu.com/s/1nIBZoz2aIX9HakQI_pjKFA?pwd=5fp3
 ```
 
-将下载好的 `opencv-4.2.0.zip` 文件移动到 `JestonSLAM/third_party` 目录下并解压：
+将下载好的 `opencv-4.2.0.zip` 文件移动到 `JetsonSLAM/third_party` 目录下并解压：
 
 ```bash
-$ mv opencv-4.2.0.zip JestonSLAM/third_party
-$ cd JestonSLAM/thrid_party
+$ mv opencv-4.2.0.zip JetsonSLAM/third_party
+$ cd JetsonSLAM/thrid_party
 $ unzip opencv-4.2.0.zip
 ```
 
@@ -126,7 +126,7 @@ $ sudo apt-get install libleptonica-dev
 * 初始化子模块：
 
 ```bash
-$ cd JestonSLAM
+$ cd JetsonSLAM
 $ git submodule update --init third_party/opencv-4.2.0/
 $ git submodule update --init third_party/opencv_contrib-4.2.0/
 ```
@@ -134,7 +134,7 @@ $ git submodule update --init third_party/opencv_contrib-4.2.0/
 * 切换分支：
 
 ```bash
-$ cd JestonSLAM
+$ cd JetsonSLAM
 $ cd third_party/opencv-4.2.0/
 $ git checkout 4.2.0
 
@@ -148,7 +148,7 @@ $ git checkout 4.2.0
 【Note】：为了不干扰系统环境中默认的 OpenCV 库，在执行完编译操作后 <font color=red>**不要执行**</font> `sudo make instlal`。
 
 ```bash
-$ cd JestonSLAM
+$ cd JetsonSLAM
 $ cd third_party/opencv-4.2.0/
 $ mkdir build && cd build
 $ cmake \
@@ -181,7 +181,7 @@ $ make -j10
 
 ```cmake
 # add: 手动配置 OpenCV 库路径
-SET(OpenCV_DIR "/home/orin/JestonSLAM/third_party/opencv-4.2.0/build")
+SET(OpenCV_DIR "/home/orin/JetsonSLAM/third_party/opencv-4.2.0/build")
 message(STATUS "Found OpenCV version: ${OpenCV_VERSION}")
 
 # Add plain cmake packages 
@@ -194,7 +194,7 @@ FIND_PACKAGE(Sophus REQUIRED)
 
 ```cmake
 # add: 手动配置 OpenCV 库路径
-SET(OpenCV_DIR "/home/orin/JestonSLAM/third_party/opencv-4.2.0/build")
+SET(OpenCV_DIR "/home/orin/JetsonSLAM/third_party/opencv-4.2.0/build")
 message(STATUS "Found OpenCV version: ${OpenCV_VERSION}")
 
 # Add plain cmake packages 
@@ -210,7 +210,7 @@ cmake_minimum_required(VERSION 2.8.3)
 project(fast_livo)
 
 # add: 手动配置 OpenCV 库路径
-SET(OpenCV_DIR "/home/orin/JestonSLAM/third_party/opencv-4.2.0/build")
+SET(OpenCV_DIR "/home/orin/JetsonSLAM/third_party/opencv-4.2.0/build")
 message(STATUS "Found OpenCV version: ${OpenCV_VERSION}")
 ```
 
@@ -225,7 +225,7 @@ $ conda deactivate
 执行编译：
 
 ```bash
-$ cd JestonSLAM
+$ cd JetsonSLAM
 $ cd fast_livo2_project
 $ catkin_make
 ```
@@ -233,7 +233,7 @@ $ catkin_make
 # Step6. 运行示例
 
 ```bash
-$ cd JestonSLAM
+$ cd JetsonSLAM
 $ cd fast_livo2_project
 $ source devel/setup.bash
 $ roslaunch fast_livo mapping_avia.launch

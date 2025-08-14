@@ -10,7 +10,7 @@ This repository replicates the Fast-LIO project and includes the following sourc
 # Step 1. Initialize the submodule
 
 ```bash
-$ cd JestonSLAM
+$ cd JetsonSLAM
 $ git submodule update --init third_party/Livox-SDK2
 $ git submodule update --init fast_lio_project/src/FAST_LIO
 $ git submodule update --init fast_lio_project/src/livox_ros_driver
@@ -19,7 +19,7 @@ $ git submodule update --init fast_lio_project/src/livox_ros_driver
 # Step 2. Install Livox-SDK2
 
 ```bash
-$ cd JestonSLAM
+$ cd JetsonSLAM
 $ cd third_party/Livox-SDK2
 $ mkdir build && cd build
 $ cmake ..
@@ -38,7 +38,7 @@ $ conda deactivate
 Execute the compile command:
 
 ```bash
-$ cd JestonSLAM
+$ cd JetsonSLAM
 $ cd fast_lio_project/src/FAST_LIO
 $ git submodule update --init
 $ cd ../../
@@ -48,7 +48,7 @@ $ catkin_make
 # Step4. Run the example
 
 ```bash
-$ cd JestonSLAM
+$ cd JetsonSLAM
 $ cd fast_lio_project/
 $ source devel/setup.bash
 $ roslaunch fast_lio mapping_mid360.launch

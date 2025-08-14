@@ -10,7 +10,7 @@
 # Step1. 初始化子模块
 
 ```bash
-$ cd JestonSLAM
+$ cd JetsonSLAM
 $ git submodule update --init third_party/Livox-SDK2 
 $ git submodule update --init fast_lio_project/src/FAST_LIO
 $ git submodule update --init fast_lio_project/src/livox_ros_driver
@@ -19,7 +19,7 @@ $ git submodule update --init fast_lio_project/src/livox_ros_driver
 # Step2. 安装 Livox-SDK2
 
 ```bash
-$ cd JestonSLAM
+$ cd JetsonSLAM
 $ cd third_party/Livox-SDK2
 $ mkdir build && cd build
 $ cmake ..
@@ -39,7 +39,7 @@ $ conda deactivate
 
 
 ```bash
-$ cd JestonSLAM
+$ cd JetsonSLAM
 $ cd fast_lio_project/src/FAST_LIO
 $ git submodule update --init
 $ cd ../../
@@ -49,7 +49,7 @@ $ catkin_make
 # Step4. 运行示例
 
 ```bash
-$ cd JestonSLAM
+$ cd JetsonSLAM
 $ cd fast_lio_project/
 $ source devel/setup.bash
 $ roslaunch fast_lio mapping_mid360.launch 
