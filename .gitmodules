@@ -7,3 +7,6 @@
 [submodule "fast_lio_project/src/FAST_LIO"]
 	path = fast_lio_project/src/FAST_LIO
 	url = https://github.com/hku-mars/FAST_LIO.git
+[submodule "fast_lio_project/src/livox_ros_driver"]
+	path = fast_lio_project/src/livox_ros_driver
+	url = https://github.com/Livox-SDK/livox_ros_driver.git
