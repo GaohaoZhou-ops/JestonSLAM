@@ -1,0 +1,4 @@
+git rm --cached third_party/Livox-SDK2
+rm -rf third_party/Livox-SDK2
+
+git submodule add https://github.com/Livox-SDK/Livox-SDK.git third_party/Livox-SDK

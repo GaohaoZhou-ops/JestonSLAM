@@ -1,3 +1,6 @@
 [submodule "third_party/Livox-SDK2"]
 	path = third_party/Livox-SDK2
 	url = https://github.com/Livox-SDK/Livox-SDK2.git
+[submodule "third_party/Livox-SDK"]
+	path = third_party/Livox-SDK
+	url = https://github.com/Livox-SDK/Livox-SDK.git
