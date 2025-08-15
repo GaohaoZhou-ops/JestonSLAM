@@ -31,3 +31,9 @@
 [submodule "point_lio_project/src/livox_ros_driver"]
 	path = point_lio_project/src/livox_ros_driver
 	url = https://github.com/Livox-SDK/livox_ros_driver.git
+[submodule "r3live_project/src/r3live"]
+	path = r3live_project/src/r3live
+	url = https://github.com/hku-mars/r3live.git
+[submodule "r3live_project/src/livox_ros_driver"]
+	path = r3live_project/src/livox_ros_driver
+	url = https://github.com/Livox-SDK/livox_ros_driver.git
