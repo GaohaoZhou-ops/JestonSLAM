@@ -12,9 +12,7 @@
 $ cd JetsonSLAM
 $ git submodule update --init --recursive point_lio_project/src/Point-LIO/
 $ git submodule update --init point_lio_project/src/livox_ros_driver/
-$ cd 
 ```
-
 
 # Step2. 安装依赖库
 
