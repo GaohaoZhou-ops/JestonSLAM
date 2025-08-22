@@ -37,3 +37,6 @@
 [submodule "r3live_project/src/livox_ros_driver"]
 	path = r3live_project/src/livox_ros_driver
 	url = https://github.com/Livox-SDK/livox_ros_driver.git
+[submodule "livox_camera_calib_project/src/livox_camera_calib"]
+	path = livox_camera_calib_project/src/livox_camera_calib
+	url = https://github.com/hku-mars/livox_camera_calib.git

@@ -12,7 +12,7 @@ This repository replicates the Fast-LIO project and includes the following sourc
 ```bash
 $ cd JetsonSLAM
 $ git submodule update --init third_party/Livox-SDK2
-$ git submodule update --init fast_lio_project/src/FAST_LIO
+$ git submodule update --init --recursive fast_lio_project/src/FAST_LIO
 $ git submodule update --init fast_lio_project/src/livox_ros_driver
 ```
 
@@ -47,9 +47,29 @@ $ catkin_make
 
 # Step4. Run the example
 
+You'll need to prepare a rosbag package. You can download it from the [download link](https://drive.google.com/drive/folders/1CGYEJ9-wWjr8INyan6q1BZz_5VtGB-fP) provided by the Mars team, or from my [cloud drive](https://pan.baidu.com/s/1Me3C7hdvkGoDXs1pxA7UpQ?pwd=2n5w). Here, I'll use the resource `CBD_Building_01.bag` from my cloud drive as an example.
+
+Before launching the script, it's recommended to confirm that the `pcd_save_en` parameter in the configuration file is `true`. Different launches will load different configuration files. For example, `mapping_mid360.launch` loads `config/mid360.yaml`:
+
+```yaml
+pcd_save:
+pcd_save_en: true
+interval: -1 # How many LiDAR frames are saved in each pcd file;
+
+# -1: All frames will be saved in one pcd file, which may lead to a memory crash if there are too many frames.
+```
+
+Although the official data package is collected using an Avia device, you can also use the Mid360 script to start it:
+
 ```bash
 $ cd JetsonSLAM
 $ cd fast_lio_project/
 $ source devel/setup.bash
 $ roslaunch fast_lio mapping_mid360.launch
 ```
+
+![mapping](./image.png)
+
+After the mapping is completed **After terminating the terminal program** the point cloud file will be saved to the `PCD/scans.pcd` path. If you do not terminate the mapping node, the file will not be updated.
+
+
