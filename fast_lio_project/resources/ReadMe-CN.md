@@ -39,10 +39,7 @@ $ conda deactivate
 
 
 ```bash
-$ cd JetsonSLAM
-$ cd fast_lio_project/src/FAST_LIO
-$ git submodule update --init
-$ cd ../../
+$ cd JetsonSLAM/fast_lio_project
 $ catkin_make
 ```
 
