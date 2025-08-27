@@ -46,3 +46,15 @@
 [submodule "voxel_slam_project/src/livox_ros_driver"]
 	path = voxel_slam_project/src/livox_ros_driver
 	url = https://github.com/Livox-SDK/livox_ros_driver.git
+[submodule "voxel_map_project/src/VoxelMap"]
+	path = voxel_map_project/src/VoxelMap
+	url = https://github.com/hku-mars/VoxelMap.git
+[submodule "voxel_map_project/src/livox_ros_driver"]
+	path = voxel_map_project/src/livox_ros_driver
+	url = https://github.com/Livox-SDK/livox_ros_driver.git
+[submodule "voxel_map_project/librealsense"]
+	path = voxel_map_project/librealsense
+	url = https://github.com/IntelRealSense/librealsense.git
+[submodule "voxel_map_project/src/realsense-ros"]
+	path = voxel_map_project/src/realsense-ros
+	url = https://github.com/IntelRealSense/realsense-ros.git
