@@ -28,6 +28,13 @@ $ cd voxel_map_project
 $ catkin_make
 ```
 
+如果你在编译过程中遇到了有关 livox 头文件相关的报错，那么可以在编译结束后执行下面的命令并重新编译：
+
+```bash
+$ source devel/setup.bash 
+$ catkin_make
+```
+
 ----
 # Step3. 运行示例
 
@@ -43,10 +50,17 @@ $ roslaunch voxel_map mapping_l515.launch
 https://pan.baidu.com/s/1nIBZoz2aIX9HakQI_pjKFA?pwd=5fp3
 ```
 
+【注意】：**我们发现官方仓库中提供的数据包可能存在问题，如果你在播放数据包时提示报错 `Error reading from file: wanted 4 bytes, read 0 bytes`，那么你需要使用下面的命令重置索引；如果你直接从我们的网盘中获得数据包，则不需要执行这一步。**
+
+```bash
+$ rosbag reindex l5152.bag
+```
+
+
 * 播放数据包：
 
 ```bash
-$ rosbag play CBD_Building_01.bag
+$ rosbag play l5152.bag
 ```
 
 ---

@@ -28,6 +28,13 @@ $ cd voxel_map_project
 $ catkin_make
 ```
 
+If you encounter errors related to the livox header files during compilation, you can run the following command after the compilation is complete to recompile:
+
+```bash
+$ source devel/setup.bash
+$ catkin_make
+```
+
 ----
 # Step 3. Run the example
 
@@ -37,16 +44,22 @@ $ source devel/setup.bash
 $ roslaunch voxel_map mapping_l515.launch
 ```
 
-You can find the VoxelMap official repository. Download an example from the [Dataset](https://connecthkuhk-my.sharepoint.com/personal/ycj1_connect_hku_hk/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fycj1%5Fconnect%5Fhku%5Fhk%2FDocuments%2FL515%5Fdataset&ga=1) sample, or download the `l5152.bag` data package from my network drive:
+You can download an example from the [dataset](https://connecthkuhk-my.sharepoint.com/personal/ycj1_connect_hku_hk/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fycj1%5Fconnect%5Fhku%5Fhk%2FDocuments%2FL515%5Fdataset&ga=1) sample provided in the VoxelMap official repository, or download `l5152.bag` from my cloud drive. Data Pack:
 
 ```bash
 https://pan.baidu.com/s/1nIBZoz2aIX9HakQI_pjKFA?pwd=5fp3
 ```
 
-* Play the data package:
+[Note]: **We've found that the data packs provided in the official repository may have issues. If you receive the error `Error reading from file: wanted 4 bytes, read 0 bytes` when playing the data pack, you will need to reset the index using the following command. If you obtained the data packs directly from our network drive, this step is not necessary. **
 
 ```bash
-$ rosbag play CBD_Building_01.bag
+$ rosbag reindex l5152.bag
+```
+
+* Play the data pack:
+
+```bash
+$ rosbag play l5152.bag
 ```
 
 ---
