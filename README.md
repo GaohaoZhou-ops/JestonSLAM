@@ -46,6 +46,7 @@ The hardware and testing facilities for this project were provided by the `Insti
 # News & Future Work
 
 ## Update Log
+* 2025-08-27: Finished Voxel-SLAM project;
 * 2025-08-27: Finished Faster-LIO project;
 * 2025-08-14: Finished Point-LIO project；
 * 2025-08-14: Finished Fast-LIVO2 project；

@@ -40,3 +40,9 @@
 [submodule "faster_lio_project/src/faster-lio"]
 	path = faster_lio_project/src/faster-lio
 	url = https://github.com/gaoxiang12/faster-lio.git
+[submodule "voxel_slam_project/src/Voxel-SLAM"]
+	path = voxel_slam_project/src/Voxel-SLAM
+	url = https://github.com/hku-mars/Voxel-SLAM.git
+[submodule "voxel_slam_project/src/livox_ros_driver"]
+	path = voxel_slam_project/src/livox_ros_driver
+	url = https://github.com/Livox-SDK/livox_ros_driver.git
