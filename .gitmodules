@@ -58,3 +58,6 @@
 [submodule "voxel_map_project/src/realsense-ros"]
 	path = voxel_map_project/src/realsense-ros
 	url = https://github.com/IntelRealSense/realsense-ros.git
+[submodule "livox_mapping_project/src/Livox-Mapping"]
+	path = livox_mapping_project/src/Livox-Mapping
+	url = https://github.com/PJLab-ADG/Livox-Mapping.git
